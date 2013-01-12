@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tala\GoCardless;
+namespace Tala\Billing\GoCardless;
 
 class ResponseTest extends \PHPUnit_Framework_TestCase
 {

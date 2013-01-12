@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tala\GoCardless;
+namespace Tala\Billing\GoCardless;
 
 use Mockery as m;
 use Tala\CreditCard;
@@ -58,7 +58,7 @@ class GatewayTest extends \PHPUnit_Framework_TestCase
 
         $response = $this->gateway->completePurchase($this->request);
 
-        $this->assertInstanceOf('Tala\GoCardless\Response', $response);
+        $this->assertInstanceOf('Tala\Billing\GoCardless\Response', $response);
         $this->assertEquals('b', $response->getGatewayReference());
     }
 
