@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Tala Payments package.
+ * This file is part of the Omnipay package.
  *
  * (c) Adrian Macneil <adrian@adrianmacneil.com>
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Tala\Billing\GoCardless;
+namespace Omnipay\Billing\GoCardless;
 
-use Tala\AbstractGateway;
-use Tala\Exception\InvalidResponseException;
-use Tala\RedirectResponse;
-use Tala\Request;
+use Omnipay\AbstractGateway;
+use Omnipay\Exception\InvalidResponseException;
+use Omnipay\RedirectResponse;
+use Omnipay\Request;
 
 /**
  * GoCardless Gateway
