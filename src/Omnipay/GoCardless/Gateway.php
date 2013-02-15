@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Omnipay\Billing\GoCardless;
+namespace Omnipay\GoCardless;
 
-use Omnipay\AbstractGateway;
-use Omnipay\Exception\InvalidResponseException;
-use Omnipay\RedirectResponse;
-use Omnipay\Request;
+use Omnipay\Common\AbstractGateway;
+use Omnipay\Common\Exception\InvalidResponseException;
+use Omnipay\Common\RedirectResponse;
+use Omnipay\Common\Request;
 
 /**
  * GoCardless Gateway

@@ -9,21 +9,21 @@
  * file that was distributed with this source code.
  */
 
-namespace Omnipay\Billing\GoCardless;
+namespace Omnipay\GoCardless;
 
 use Omnipay\TestCase;
 
 class ResponseTest extends TestCase
 {
     /**
-     * @expectedException Omnipay\Exception\InvalidResponseException
+     * @expectedException Omnipay\Common\Exception\InvalidResponseException
      */
     public function testConstructEmptyData()
     {
         $response = new Response('', 'abc');
     }
     /**
-     * @expectedException Omnipay\Exception\InvalidResponseException
+     * @expectedException Omnipay\Common\Exception\InvalidResponseException
      */
     public function testConstructEmptyReference()
     {

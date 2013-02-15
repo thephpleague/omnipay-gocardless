@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Omnipay\Billing\GoCardless;
+namespace Omnipay\GoCardless;
 
 use Omnipay\GatewayTestCase;
 
@@ -33,7 +33,7 @@ class GatewayTest extends GatewayTestCase
     {
         $response = $this->gateway->purchase($this->options);
 
-        $this->assertInstanceOf('\Omnipay\RedirectResponse', $response);
+        $this->assertInstanceOf('\Omnipay\Common\RedirectResponse', $response);
         $this->assertTrue($response->isRedirect());
         $this->assertStringStartsWith('https://gocardless.com/connect/bills/new?', $response->getRedirectUrl());
     }
@@ -71,7 +71,7 @@ class GatewayTest extends GatewayTestCase
     }
 
     /**
-     * @expectedException Omnipay\Exception\InvalidResponseException
+     * @expectedException Omnipay\Common\Exception\InvalidResponseException
      */
     public function testCompletePurchaseInvalid()
     {
