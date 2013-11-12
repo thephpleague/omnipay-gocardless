@@ -2,7 +2,7 @@
 
 namespace Omnipay\GoCardless\Message;
 
-use Omnipay\TestCase;
+use Omnipay\Tests\TestCase;
 
 class CompletePurchaseResponseTest extends TestCase
 {
