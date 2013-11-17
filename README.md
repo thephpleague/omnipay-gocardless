@@ -6,7 +6,7 @@
 [![Latest Stable Version](https://poser.pugx.org/omnipay/gocardless/version.png)](https://packagist.org/packages/omnipay/gocardless)
 [![Total Downloads](https://poser.pugx.org/omnipay/gocardless/d/total.png)](https://packagist.org/packages/omnipay/gocardless)
 
-[Omnipay](https://github.com/omnipay/omnipay) is a framework agnostic, multi-gatgocardless payment
+[Omnipay](https://github.com/omnipay/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.3+. This package implements GoCardless support for Omnipay.
 
 ## Installation
