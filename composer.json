@@ -24,7 +24,7 @@
         }
     ],
     "autoload": {
-        "psr-0": { "Omnipay\\GoCardless\\" : "src/" }
+        "psr-4": { "Omnipay\\GoCardless\\" : "src/" }
     },
     "require": {
         "omnipay/common": "~2.0"
