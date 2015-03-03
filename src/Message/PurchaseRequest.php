@@ -43,18 +43,4 @@ class PurchaseRequest extends AbstractRequest
     {
         return $this->response = new PurchaseResponse($this, $data);
     }
-
-    /**
-     * Generate a nonce for each request
-     */
-    protected function generateNonce()
-    {
-        $nonce = '';
-        for ($i = 0; $i < 64; $i++) {
-            // append random ASCII character
-            $nonce .= chr(mt_rand(33, 126));
-        }
-
-        return base64_encode($nonce);
-    }
 }

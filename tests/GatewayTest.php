@@ -83,4 +83,45 @@ class GatewayTest extends GatewayTestCase
 
         $response = $this->gateway->completePurchase($this->options)->send();
     }
+
+    public function testCapture()
+    {
+        $response = $this->gateway->capture(array('amount' => '10.00'));
+
+        $this->assertInstanceOf('Omnipay\GoCardless\Message\CaptureRequest', $response);
+    }
+
+    public function testCaptureSuccess()
+    {
+        $params = array(
+            'amount' => '10.00',
+            'transactionReference' => 'abc',
+            'description' => 'fyi'
+        );
+        $transaction = $this->gateway->capture($params);
+        $transaction->setChargeCustomerAt('2015-12-12');
+
+        $this->setMockHttpResponse('CapturePaymentSuccess.txt');
+
+        $response = $transaction->send();
+
+        $this->assertInstanceOf('Omnipay\GoCardless\Message\CaptureResponse', $response);
+        $this->assertTrue($response->isSuccessful());
+        $this->assertNull($response->getMessage());
+    }
+
+    public function testCaptureFailure()
+    {
+        $params = array(
+            'amount' => '10.00',
+            'transactionReference' => '12v'
+        );
+        $this->setMockHttpResponse('CapturePaymentFailure.txt');
+        $response = $this->gateway->capture($params)->send();
+
+        $this->assertInstanceOf('Omnipay\GoCardless\Message\CaptureResponse', $response);
+        $this->assertFalse($response->isSuccessful());
+        $this->assertSame('The authorization cannot be found', $response->getMessage());
+    }
+
 }

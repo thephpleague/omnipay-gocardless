@@ -52,6 +52,16 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('accessToken', $value);
     }
 
+    public function getChargeCustomerAt()
+    {
+        return $this->getParameter('chargeCustomerAt');
+    }
+
+    public function setChargeCustomerAt($value)
+    {
+        return $this->setParameter('chargeCustomerAt', $value);
+    }
+
     /**
      * Generate a signature for the data array
      */
@@ -63,5 +73,19 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function getEndpoint()
     {
         return $this->getTestMode() ? $this->testEndpoint : $this->liveEndpoint;
+    }
+
+    /**
+     * Generate a nonce for each request
+     */
+    protected function generateNonce()
+    {
+        $nonce = '';
+        for ($i = 0; $i < 64; $i++) {
+            // append random ASCII character
+            $nonce .= chr(mt_rand(33, 126));
+        }
+
+        return base64_encode($nonce);
     }
 }
