@@ -71,6 +71,67 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         return $this->setParameter('state', $value);
     }
+
+    public function getIntervalLength()
+    {
+        return $this->getParameter('intervalLength');
+    }
+
+    public function setIntervalLength($value)
+    {
+        return $this->setParameter('intervalLength', $value);
+    }
+
+    public function getIntervalUnit()
+    {
+        return $this->getParameter('intervalUnit');
+    }
+
+    public function setIntervalUnit($value)
+    {
+        return $this->setParameter('intervalUnit', $value);
+    }
+
+    public function getCalendarInterval()
+    {
+        return $this->getParameter('calendarInterval');
+    }
+
+    public function setCalendarInterval($value)
+    {
+        return $this->setParameter('calendarInterval', $value);
+    }
+
+    public function getSetupFee()
+    {
+        return $this->getParameter('setupFee');
+    }
+
+    public function setSetupFee($value)
+    {
+        return $this->setParameter('setupFee', $value);
+    }
+
+    public function getPreAuthExpire()
+    {
+        return $this->getParameter('preAuthExpire');
+    }
+
+    public function setPreAuthExpire($value)
+    {
+        return $this->setParameter('preAuthExpire', $value);
+    }
+
+    public function getIntervalCount()
+    {
+        return $this->getParameter('intervalCount');
+    }
+
+    public function setIntervalCount($value)
+    {
+        return $this->setParameter('intervalCount', $value);
+    }
+
     /**
      * Generate a signature for the data array
      */

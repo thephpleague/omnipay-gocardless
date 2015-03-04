@@ -84,6 +84,14 @@ class GatewayTest extends GatewayTestCase
         $response = $this->gateway->completePurchase($this->options)->send();
     }
 
+    public function testAuthorization()
+    {
+        $response = $this->gateway->authorize($this->options);
+
+        $this->assertInstanceOf('Omnipay\GoCardless\Message\AuthorizeRequest', $response);
+
+    }
+
     public function testCapture()
     {
         $response = $this->gateway->capture(array('amount' => '10.00'));
