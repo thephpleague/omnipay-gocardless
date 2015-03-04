@@ -16,7 +16,7 @@ class CompletePurchaseRequest extends AbstractRequest
         $data['resource_uri'] = $this->httpRequest->get('resource_uri');
         $data['resource_id'] = $this->httpRequest->get('resource_id');
         $data['resource_type'] = $this->httpRequest->get('resource_type');
-        if($this->httpRequest->get('state')) {
+        if ($this->httpRequest->get('state')) {
             $data['state'] = $this->httpRequest->get('state');
         }
 

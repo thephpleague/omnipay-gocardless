@@ -27,7 +27,7 @@ class CompleteAuthorizeResponse extends AbstractResponse
 
     public function getMessage()
     {
-        if (!$this->isSuccessful()){
+        if (!$this->isSuccessful()) {
             return reset($this->data['error']);
         }
         return null;
