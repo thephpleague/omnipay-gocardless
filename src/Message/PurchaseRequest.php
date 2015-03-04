@@ -17,6 +17,7 @@ class PurchaseRequest extends AbstractRequest
         $data['timestamp'] = gmdate('Y-m-d\TH:i:s\Z');
         $data['redirect_uri'] = $this->getReturnUrl();
         $data['cancel_uri'] = $this->getCancelUrl();
+        $data['state'] = $this->getState();
         $data['bill'] = array();
         $data['bill']['merchant_id'] = $this->getMerchantId();
         $data['bill']['amount'] = $this->getAmount();

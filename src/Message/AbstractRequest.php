@@ -62,6 +62,15 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('chargeCustomerAt', $value);
     }
 
+    public function getState()
+    {
+        return $this->getParameter('state');
+    }
+
+    public function setState($value)
+    {
+        return $this->setParameter('state', $value);
+    }
     /**
      * Generate a signature for the data array
      */
