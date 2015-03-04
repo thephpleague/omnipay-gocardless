@@ -20,7 +20,7 @@ class AuthorizeResponse extends AbstractResponse implements RedirectResponseInte
 
     public function getRedirectUrl()
     {
-        return $this->getRequest()->getEnpoint().'connect/pre_authorizations/new?'.Gateway::generateQueryString($this->data);
+        return $this->getRequest()->getEndpoint().'/connect/pre_authorizations/new?'.Gateway::generateQueryString($this->data);
     }
 
     public function getRedirectMethod()

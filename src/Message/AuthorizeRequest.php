@@ -9,7 +9,7 @@ class AuthorizeRequest extends AbstractRequest
 {
     public function getData()
     {
-        $this->validate('amount', 'interval_length', 'interval_unit', 'returnURL');
+        $this->validate('amount', 'intervalLength', 'intervalUnit', 'returnUrl');
 
         $data = array();
         //Required Items from the API
