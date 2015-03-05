@@ -9,7 +9,7 @@ class PurchaseRequest extends AbstractRequest
 {
     public function getData()
     {
-        $this->validate('amount', 'returnUrl');
+        $this->validate('amount');
 
         $data = array();
         $data['client_id'] = $this->getAppId();
