@@ -7,12 +7,6 @@ use Omnipay\Common\Message\RequestInterface;
 
 class CaptureResponse extends AbstractResponse
 {
-    protected $transactionReference;
-
-    public function __construct(RequestInterface $request, $data)
-    {
-        parent::__construct($request, $data);
-    }
 
     public function isSuccessful()
     {
