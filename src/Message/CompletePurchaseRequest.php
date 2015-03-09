@@ -28,6 +28,16 @@ class CompletePurchaseRequest extends AbstractRequest
 
     public function sendData($data)
     {
+        // don't throw exceptions for 4xx errors
+        $this->httpClient->getEventDispatcher()->addListener(
+            'request.error',
+            function ($event) {
+                if ($event['response']->isClientError()) {
+                    $event->stopPropagation();
+                }
+            }
+        );
+
         $httpRequest = $this->httpClient->post(
             $this->getEndpoint().'/api/v1/confirm',
             array('Accept' => 'application/json'),
