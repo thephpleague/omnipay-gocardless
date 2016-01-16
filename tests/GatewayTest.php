@@ -49,6 +49,26 @@ class GatewayTest extends GatewayTestCase
         $this->assertEquals('b', $response->getTransactionReference());
     }
 
+    public function testCompletePurchaseSuccessWithEmptyStateVariable()
+    {
+        $this->getHttpRequest()->request->replace(
+            array(
+                'resource_uri' => 'a',
+                'resource_id' => 'b',
+                'resource_type' => 'c',
+                'state' => '',
+                'signature' => '32189fc3f76bfeacb279a911116256d0ab399ecc33f3c74987564d73bb390c6a',
+            )
+        );
+
+        $this->setMockHttpResponse('CompletePurchaseSuccess.txt');
+
+        $response = $this->gateway->completePurchase($this->options)->send();
+
+        $this->assertTrue($response->isSuccessful());
+        $this->assertEquals('b', $response->getTransactionReference());
+    }
+
     public function testCompletePurchaseError()
     {
         $this->getHttpRequest()->request->replace(
